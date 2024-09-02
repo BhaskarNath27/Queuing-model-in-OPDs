@@ -36,3 +36,7 @@ Integration: Seamlessly integrate with other hospital systems for a unified expe
 Medicine Tracking: Monitor inventory levels of medicines and consumables.<br/>
 Automated Alerts: Receive notifications for low stock levels and expiration dates.<br/>
 Order Management: Facilitate procurement and manage supplier relationships.
+<hr/>
+
+<p>For any questions or support, please contact</p>
+ Bhaskar Nath <br/>Ph-7667330872  <br/> Email-bhaskarnath792@gmail.com
