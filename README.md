@@ -1,4 +1,5 @@
 <h1>Hospital Management System: Queuing Models, Bed Availability, Patient Admissions, and Inventory Management</h1>
+<hr/>
 
 <h2>Overview</h2>
 
