@@ -1,0 +1,136 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: url('opd.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.tab {
+    padding: 12px 25px;
+    margin: 0 10px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.tab.active {
+    background-color: #ff4081;
+    transform: translateY(-5px);
+}
+
+.tab:hover {
+    background-color: #ff5c8d;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+form {
+    display: grid;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, button {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

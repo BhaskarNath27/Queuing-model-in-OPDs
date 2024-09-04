@@ -1,0 +1,213 @@
+/* Reset and Font */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body and Background Styling */
+body {
+    background: url('blood3.jpg') no-repeat center center fixed; /* Replace 'your-image-url.jpg' with the actual path to your image */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 1s ease-out;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #d32f2f;
+    font-size: 2rem;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    color: #444;
+    animation: fadeIn 1s ease-out 1s forwards;
+}
+
+/* Tabs Styling */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 1.1rem;
+    color: #555;
+    border-radius: 10px;
+    margin: 0 5px;
+    position: relative;
+    font-weight: 500;
+}
+
+.tab::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 0;
+    background-color: #d32f2f;
+    transition: width 0.3s ease-in-out;
+}
+
+.tab.active {
+    background-color: #d32f2f;
+    color: #fff;
+    font-weight: 600;
+}
+
+.tab.active::after {
+    width: 100%;
+}
+
+/* Tab Content Styling */
+.tab-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.95); /* Slightly more transparent */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content.active {
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+    top: 0;
+}
+
+/* Form Styling */
+form {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out 1.5s forwards;
+}
+
+input, select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    width: 100%;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #d32f2f;
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    padding: 12px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #b71c1c;
+    transform: scale(1.05);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f9f9f9;
+    font-weight: 600;
+    color: #555;
+}
+
+tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+/* Search Result Styling */
+#searchResult {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #d32f2f;
+    animation: fadeIn 1s ease-out 2s forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
