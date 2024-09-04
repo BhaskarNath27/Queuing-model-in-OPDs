@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPD Queue Management</title>
+    <link rel="stylesheet" href="opdq.css">
+</head>
+<body>
+    <div class="container">
+        <h1>OPD Queue Management System</h1>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="queue">Current Queue</button>
+            <button class="tab" data-tab="appointment">Add Appointment</button>
+            <button class="tab" data-tab="doctorQueue">Doctor-wise Queue</button>
+        </div>
+
+        <div id="queueSection" class="tab-content active">
+            <h2>Current Queue</h2>
+            <table id="queueTable">
+                <thead>
+                    <tr>
+                        <th>Patient ID</th>
+                        <th>Patient Name</th>
+                        <th>Appointment Time</th>
+                        <th>Doctor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Queue data will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="appointmentSection" class="tab-content">
+            <h2>Add New Appointment</h2>
+            <form id="appointmentForm">
+                <input type="text" id="patientId" placeholder="Patient ID" required>
+                <input type="text" id="patientName" placeholder="Patient Name" required>
+                <input type="datetime-local" id="appointmentTime" required>
+                <input type="text" id="doctorName" placeholder="Doctor's Name" required>
+                <button type="submit">Add Patient to Queue</button>
+            </form>
+        </div>
+
+        <div id="doctorQueueSection" class="tab-content">
+            <h2>Doctor-wise Queue</h2>
+            <form id="doctorFilterForm">
+                <select id="doctorSelect" required>
+                    <option value="">Select Doctor</option>
+                    <!-- Options will be dynamically inserted here -->
+                </select>
+                <button type="submit">View Queue</button>
+            </form>
+            <table id="doctorQueueTable">
+                <thead>
+                    <tr>
+                        <th>Patient ID</th>
+                        <th>Patient Name</th>
+                        <th>Appointment Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Doctor-wise queue data will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="opdq.js"></script>
+</body>
+</html>
