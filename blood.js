@@ -1,3 +1,19 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDwquccsuzkUNxfz5vhxrahyQ5dh-Ygw-g",
+    authDomain: "addpatient-e3ca6.firebaseapp.com",
+    projectId: "addpatient-e3ca6",
+    storageBucket: "addpatient-e3ca6.appspot.com",
+    messagingSenderId: "109284311899",
+    appId: "1:109284311899:web:f5fe7618dc5b6a9eccd07e"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const donationsRef = ref(database, 'donations');
 
 // Simulated database
 let bloodInventory = {
@@ -36,11 +52,17 @@ document.getElementById('donationForm').addEventListener('submit', (e) => {
         units: parseInt(document.getElementById('units').value),
         date: document.getElementById('donationDate').value
     };
-    donations.push(donation);
-    bloodInventory[donation.bloodType] += donation.units;
-    alert('Donation added successfully!');
-    e.target.reset();
-    updateInventoryTable();
+
+    // Push the donation to Firebase
+    push(donationsRef, donation)
+      .then(() => {
+        alert('Donation added successfully!');
+        e.target.reset();
+      })
+      .catch(error => {
+        console.error('Error adding donation to database:', error);
+        alert('An error occurred. Please try again later.');
+      });
 });
 
 // Update inventory table
@@ -65,3 +87,21 @@ document.getElementById('searchForm').addEventListener('submit', (e) => {
 
 // Initial inventory table update
 updateInventoryTable();
+
+// Fetch donations from Firebase and update inventory
+onValue(donationsRef, (snapshot) => {
+    const data = snapshot.val();
+    donations = [];
+    bloodInventory = {
+        'A+': 0, 'A-': 0, 'B+': 0, 'B-': 0,
+        'AB+': 0, 'AB-': 0, 'O+': 0, 'O-': 0
+    };
+
+    if (data) {
+        Object.entries(data).forEach(([key, value]) => {
+            donations.push(value);
+            bloodInventory[value.bloodType] += value.units;
+        });
+        updateInventoryTable();
+    }
+});

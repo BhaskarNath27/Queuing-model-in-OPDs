@@ -1,5 +1,35 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+import { getDatabase, ref, push, get, onValue } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDwquccsuzkUNxfz5vhxrahyQ5dh-Ygw-g",
+    authDomain: "addpatient-e3ca6.firebaseapp.com",
+    projectId: "addpatient-e3ca6",
+    storageBucket: "addpatient-e3ca6.appspot.com",
+    messagingSenderId: "109284311899",
+    appId: "1:109284311899:web:f5fe7618dc5b6a9eccd07e"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const queueRef = ref(database, 'queue');
+
 // Array to hold the queue data
 let queueData = [];
+
+// Fetch initial queue data from Firebase
+function fetchQueueData() {
+    onValue(queueRef, (snapshot) => {
+        queueData = [];
+        snapshot.forEach(childSnapshot => {
+            const childData = childSnapshot.val();
+            queueData.push(childData);
+        });
+        updateQueueTable();
+        updateDoctorOptions();
+    });
+}
 
 // Function to update doctor options in the filter form
 function updateDoctorOptions() {
@@ -63,17 +93,21 @@ document.getElementById('appointmentForm').addEventListener('submit', (e) => {
         doctor: document.getElementById('doctorName').value,
     };
 
-    // Add the new patient to the queue array
-    queueData.push(newPatient);
-
-    // Show a success message and reset the form
-    alert('Patient added to the queue successfully!');
-    e.target.reset();
-
-    // Update the queue table to reflect the new patient
-    updateQueueTable();
-    updateDoctorOptions(); // Update doctor options for the filter
+    addNewPatient(newPatient);
 });
+
+// Function to handle adding a new patient to Firebase
+function addNewPatient(patient) {
+    push(queueRef, patient)
+        .then(() => {
+            alert('Patient added to the queue successfully!');
+            document.getElementById('appointmentForm').reset(); // Reset form
+        })
+        .catch(error => {
+            console.error('Error adding patient to database:', error);
+            alert('An error occurred. Please try again later.');
+        });
+}
 
 // Event listener for the doctor filter form submission
 document.getElementById('doctorFilterForm').addEventListener('submit', (e) => {
@@ -97,6 +131,5 @@ document.querySelectorAll('.tab').forEach(tab => {
     });
 });
 
-// Initial call to populate the queue table and doctor options (if any data exists)
-updateQueueTable();
-updateDoctorOptions();
+// Initial call to populate the queue table and doctor options
+fetchQueueData();

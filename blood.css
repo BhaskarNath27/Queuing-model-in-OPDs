@@ -8,7 +8,7 @@
 
 /* Body and Background Styling */
 body {
-    background: url('blood3.jpg') no-repeat center center fixed; /* Replace 'your-image-url.jpg' with the actual path to your image */
+    background: url('blood3.jpg') no-repeat center center fixed; 
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -16,11 +16,11 @@ body {
     min-height: 100vh;
     padding: 20px;
     color: #333;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden; 
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+    background: rgba(255, 255, 255, 0.85); 
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     padding: 30px;
@@ -102,7 +102,7 @@ h2 {
     width: 100%;
     top: 100%;
     left: 0;
-    background: rgba(255, 255, 255, 0.95); /* Slightly more transparent */
+    background: rgba(255, 255, 255, 0.95); 
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -209,5 +209,3 @@ tr:nth-child(even) {
         opacity: 1;
     }
 }
-
-
