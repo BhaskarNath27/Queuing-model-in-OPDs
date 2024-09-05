@@ -121,12 +121,16 @@ body {
 .image-wrapper {
     max-width: 45%;
     height: auto;
+    display: flex;
+    justify-content: center; /* Center the circular image */
+    align-items: center; /* Center the circular image */
 }
 
 .hospital-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+    width: 150px; /* Set the width of the image */
+    height: 150px; /* Set the height of the image, same as width to ensure it's a circle */
+    border-radius: 50%; /* Creates a circle */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -148,5 +152,10 @@ body {
 
     .primary-button {
         font-size: 16px;
+    }
+
+    .hospital-image {
+        width: 100px; /* Adjust width for smaller screens */
+        height: 100px; /* Adjust height for smaller screens */
     }
 }
