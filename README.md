@@ -39,5 +39,24 @@ Automated Alerts: Receive notifications for low stock levels and expiration date
 Order Management: Facilitate procurement and manage supplier relationships.
 <hr/>
 
-<p>For any questions/queries or support, please contact</p>
- Bhaskar Nath <br/>Ph-7667330872  <br/> Email-bhaskarnath792@gmail.com
+<h2>Technologies used -- </h2>
+<h3>Programming Languages : </h3>
+<ul>
+ <li>HTML</li>
+ <li>CSS</li>
+ <li>JAVASCRIPT</li>
+</ul>
+<h3>Databases : </h3>
+<ul>
+ <li>Firebase Realtime Database</li>
+</ul>
+<h3>Tools :</h3>
+<ul>
+ <li>Firebase Services</li>
+</ul>
+
+
+<h2>For any questions/queries or support, please contact</h2>
+ <h3>Bhaskar Nath</h3>
+ <h3>Ph-7667330872</h3>
+ <h3>Email-bhaskarnath792@gmail.com</h3>
