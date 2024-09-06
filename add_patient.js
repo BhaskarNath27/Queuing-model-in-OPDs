@@ -109,27 +109,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-   // Function to add a patient's data to the table
-// Function to add a patient's data to the table
-function addPatientToTable(patientData) {
-  const row = patientTable.insertRow();
-  row.insertCell(0).innerText = patientData.name;
-  row.insertCell(1).innerText = patientData.phone_num;
-  row.insertCell(2).innerText = patientData.patient_relative_name;
-  row.insertCell(3).innerText = patientData.patient_relative_contact;
-  row.insertCell(4).innerText = patientData.address;
-  row.insertCell(5).innerText = patientData.prior_ailments;
-  row.insertCell(6).innerText = patientData.bed_num;
-  row.insertCell(7).innerText = patientData.dob;
-  row.insertCell(8).innerText = patientData.status;
-  row.insertCell(9).innerText = patientData.doctor;
-  
-  // Properly handle multiple symptoms
-  const symptomsCell = row.insertCell(10);
-  symptomsCell.innerHTML = patientData.symptoms.length > 0 ? patientData.symptoms.join(', ') : 'None';
-  symptomsCell.style.whiteSpace = "pre-wrap";  // Ensure wrapping of text and proper line breaks
-}
+    // Updated function to add a patient's data to the table
+    function addPatientToTable(patientData) {
+        const row = patientTable.insertRow();
+        row.insertCell(0).innerText = patientData.name;
+        row.insertCell(1).innerText = patientData.phone_num;
+        row.insertCell(2).innerText = patientData.patient_relative_name;
+        row.insertCell(3).innerText = patientData.patient_relative_contact;
+        row.insertCell(4).innerText = patientData.address;
+        row.insertCell(5).innerText = patientData.prior_ailments;
+        row.insertCell(6).innerText = patientData.bed_num;
+        row.insertCell(7).innerText = patientData.dob;
+        row.insertCell(8).innerText = patientData.status;
+        row.insertCell(9).innerText = patientData.doctor;
+        
+        // Ensure symptoms array exists and is an array before trying to access it
+        const symptomsCell = row.insertCell(10);
+        if (Array.isArray(patientData.symptoms) && patientData.symptoms.length > 0) {
+            symptomsCell.innerHTML = patientData.symptoms.join(', ');
+        } else {
+            symptomsCell.innerHTML = 'None';
+        }
 
-read();
+        symptomsCell.style.whiteSpace = "pre-wrap";  // Ensure proper text wrapping
+    }
 
+    read();
 });

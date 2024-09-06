@@ -7,7 +7,7 @@
 
 /* Body and Background Styling */
 body {
-    background: url('bloodGif.gif') no-repeat center center fixed; 
+    background: url('blood3.jpg') no-repeat center center fixed; 
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -19,7 +19,7 @@ body {
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.85); 
+    background: rgba(255, 255, 255, 0.95); 
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     padding: 30px;
