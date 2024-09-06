@@ -1,16 +1,14 @@
-// Import Firebase SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-import { getDatabase, ref, push, onValue, set } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+import { getDatabase, ref, push, get, onValue, set } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
 
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyATdLPT9FResHcVR5txmIHhwIjKXbsF0og",
-    authDomain: "first-project-5e9a3.firebaseapp.com",
-    databaseURL: "https://first-project-5e9a3-default-rtdb.firebaseio.com",
-    projectId: "first-project-5e9a3",
-    storageBucket: "first-project-5e9a3.appspot.com",
-    messagingSenderId: "795890594127",
-    appId: "1:795890594127:web:d5066cb2ccb5515c26953a"
+    apiKey: "AIzaSyDwquccsuzkUNxfz5vhxrahyQ5dh-Ygw-g",
+    authDomain: "addpatient-e3ca6.firebaseapp.com",
+    projectId: "addpatient-e3ca6",
+    storageBucket: "addpatient-e3ca6.appspot.com",
+    messagingSenderId: "109284311899",
+    appId: "1:109284311899:web:f5fe7618dc5b6a9eccd07e"
 };
 
 // Initialize Firebase
@@ -47,7 +45,7 @@ function fetchInventory() {
 }
 
 // Add a new item to the Firebase Realtime Database
-function addItem() {
+window.addItem = function() {
     const itemName = document.getElementById('item-name').value;
     const itemQuantity = parseInt(document.getElementById('item-quantity').value);
     const itemCategory = document.getElementById('item-category').value;
@@ -72,7 +70,7 @@ function addItem() {
     } else {
         alert("Please fill out all fields.");
     }
-}
+};
 
 // Clear form fields after adding an item
 function clearFormFields() {
@@ -82,7 +80,7 @@ function clearFormFields() {
 }
 
 // Search items based on name, category, or status
-function searchItems() {
+window.searchItems = function() {
     const queryText = document.getElementById('search-input').value.toLowerCase();
     onValue(inventoryRef, (snapshot) => {
         const filteredItems = [];
@@ -96,7 +94,7 @@ function searchItems() {
         });
         renderInventory(filteredItems); // Render the filtered results
     });
-}
+};
 
 // Initial fetch and rendering of inventory
 fetchInventory();
