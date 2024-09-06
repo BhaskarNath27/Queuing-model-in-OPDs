@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function redirectToSection(section) {
     const sectionPages = {
-        "opd-queue": "que.html",
+        "opd-queue": "opdq.html",
         "add-patient": "add_patient.html",
         "bed-availability": "bed.html",
         "inventory": "inventory.html",
-        "refer-patient": "patient_refer.html",
+        "refer-patient": "patient_refer(1).html",
         "staff-training": "training.html",
         "schedule": "schedulenew.html",
         "blood-bank": "blood.html"
@@ -37,6 +37,6 @@ function redirectToSection(section) {
     if (pageUrl) {
         window.open(pageUrl, "_blank");
     } else {
-        console.error(No page found for section: ${section});
+        console.error(`No page found for section: ${section}`);
     }
 }
