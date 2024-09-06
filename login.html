@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="login_updated.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <div class="login-container">
-        <form action="/login" method="post">
+      <form id="loginForm">
             <h2>Login</h2>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+            <label for="username">E-mail</label>
+            <input type="email" id="email" name="username" required>
 
-            <!-- <label>Password</label>
-            <span class="password-toggle-icon"><i class="fas fa-eye"></i></span> -->
-            <label for="password">Password <span class="star-red">&nbsp;*</span></label>
-            <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+            <label for="password">Password <!-- <span class="star-red">&nbsp;*</span> --></label>
+            <!-- <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i> -->
             <input type="password" id="password" name="password" required>
             
             
@@ -24,12 +22,13 @@
             <!-- <input type="text" id="email" placeholder="email">
             <input type="password" id="password" placeholder="password">  -->
             <!-- <button id="signup">SignUp</button> -->
-            <button id="signin">SignIn</button> 
-            <script type="text/javascript">
+            <button id="signin" type="submit">SignIn</button> 
+            <!-- <script type="text/javascript">
                 document.getElementById("signin").onclick = function () {
                     location.href = "dashboard.html";
                 };
-            </script>
+            </script> -->
+            <!-- <script src="login.js"></script> -->
             
             <label>
                 <input type="checkbox" checked="checked" name="remember" style="margin-bottom:5px"> Remember me
@@ -45,9 +44,9 @@
         <input type="password" id="password" placeholder="password">
         <button id="sign up">SignUp</button>
     </div> -->
-    <script>
+    <!-- <script>
         $('a').click();
-    </script>
-    <script type="module" src="login_updated.js"></script>
+    </script> -->
+    <script type="module" src="login.js"></script>
 </body>
 </html>
