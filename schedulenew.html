@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Schedule Management - Hospital</title>
+    <link rel="stylesheet" href="schedule.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Doctor Schedule Manager</h1>
+        
+        <h2>Register a New Doctor</h2>
+        <form id="addDoctorForm">
+            <div class="form-group">
+                <label for="doctorName">Doctor's Name</label>
+                <input type="text" id="doctorName" placeholder="Doctor's Name" required>
+            </div>
+            <div class="form-group">
+                <label for="specialty">Specialty</label>
+                <input type="text" id="specialty" placeholder="Specialty" required>
+            </div>
+            <button type="submit">Add Doctor</button>
+        </form>
+
+        <h2>Add Doctor's Schedule</h2>
+        <form id="addScheduleForm" style="display:none;">
+            <div class="form-group">
+                <label for="doctorSelectForSchedule">Select Doctor</label>
+                <select id="doctorSelectForSchedule">
+                    <option value="">Choose a Doctor</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="day">Day</label>
+                <select id="day">
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="shifts">Shifts (comma-separated)</label>
+                <input type="text" id="shifts" placeholder="e.g., morning,afternoon,off" required>
+            </div>
+            <button type="submit">Add Schedule</button>
+        </form>
+
+        <h2>View Schedule</h2>
+        <div class="form-group">
+            <label for="doctorSelect">Select Doctor</label>
+            <select id="doctorSelect">
+                <option value="">Choose a Doctor</option>
+            </select>
+        </div>
+        
+        <div id="schedule" class="schedule">
+            <!-- Schedule will be dynamically populated here -->
+        </div>
+    </div>
+
+    <!-- Ensure the script type is module for ES6 imports -->
+    <script type="module" src="schedule.js"></script>
+</body>
+</html>
