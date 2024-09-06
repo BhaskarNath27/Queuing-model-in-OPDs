@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Referral System</title>
+    <link rel="stylesheet" href="patient_refer.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Referral System</h1>
+        
+        <div class="tabs">
+            <button class="tab active" data-tab="referral">New Referral</button>
+            <button class="tab" data-tab="hospitals">Hospitals</button>
+            <button class="tab" data-tab="doctors">Doctors</button>
+        </div>
+        
+        <div id="referralTab" class="tab-content active">
+            <h2>New Patient Referral</h2>
+            <form id="referralForm">
+                <input type="text" id="patientName" placeholder="Patient Name" required>
+                <input type="date" id="dateOfBirth" required>
+                <textarea id="medicalHistory" placeholder="Brief Medical History" required></textarea>
+                <select id="referringHospital" required>
+                    <option value="">Select Referring Hospital</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <select id="referringDoctor" required>
+                    <option value="">Select Referring Doctor</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <input type="date" id="referralDate" required>
+                <textarea id="referralReason" placeholder="Reason for Referral" required></textarea>
+                <button type="submit">Submit Referral</button>
+            </form>
+        </div>
+        
+        <div id="hospitalsTab" class="tab-content">
+            <h2>Hospital List</h2>
+            <form id="hospitalForm">
+                <input type="text" id="hospitalName" placeholder="Hospital Name" required>
+                <input type="text" id="hospitalAddress" placeholder="Address" required>
+                <input type="tel" id="hospitalPhone" placeholder="Phone Number" required>
+                <button type="submit">Add Hospital</button>
+            </form>
+            <table id="hospitalTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Hospital data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div id="doctorsTab" class="tab-content">
+            <h2>Doctor List</h2>
+            <form id="doctorForm">
+                <input type="text" id="doctorName" placeholder="Doctor Name" required>
+                <input type="text" id="specialty" placeholder="Specialty" required>
+                <select id="doctorHospital" required>
+                    <option value="">Select Hospital</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <button type="submit">Add Doctor</button>
+            </form>
+            <table id="doctorTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Specialty</th>
+                        <th>Hospital</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Doctor data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js"></script>
+    <!-- Your custom script -->
+    <script type="module" src="patient_refer.js"></script>
+</body>
+</html>
