@@ -17,11 +17,12 @@
         <button class="nav-button" data-section="staff-training" onclick="redirect_to_training()">Staff Training</button>
         <button class="nav-button" data-section="schedule" onclick="redirect_to_schedule()">Schedule</button>
         <button class="nav-button" data-section="blood-bank" onclick="redirect_to_blood_bank()">Blood Bank</button>
+        <button class="nav-button" data-section="ambulance" onclick="redirect_to_ambulance()">Ambulance</button>
     </nav>
     
     <div class="main-content">
         <div class="welcome-section" id="welcome">
-            <h1>Welcome to the Healthcare Dashboard</h1>
+            <h1>Welcome to MedEase</h1>
             <p>Manage your hospital's operations seamlessly with real-time data and insights.</p>
             <img src="dash_bg.png" alt="Hospital Image">
         </div>
@@ -74,6 +75,12 @@
             <img src="blood_bank.png" alt="Blood Bank Image">
         </div>
 
+        <div class="section" id="ambulance">
+            <h2>Ambulance</h2>
+            <p>Monitor ambulance availability and manage dispatch for emergency patient transfers. Ensure timely coordination for efficient response to critical situations.</p>
+            <img src="ambulance.jpg.png" alt="Ambulance Image">
+        </div>
+
         <footer class="footer">
             <p>&copy; 2024 Healthcare Dashboard. All rights reserved.</p>
             <div class="dashboard-options">
@@ -86,19 +93,11 @@
                 <a href="#staff-training">Staff Training</a>
                 <a href="#schedule">Schedule</a>
                 <a href="#blood-bank">Blood Bank</a>
+                <a href="#ambulance">Ambulance</a>
             </div>
         </footer>
     </div>
 
-    <!-- <script>
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-        }
-    </script> -->
     <script src="dashboard.js"></script>
 </body>
 </html>
-
-
-
-
