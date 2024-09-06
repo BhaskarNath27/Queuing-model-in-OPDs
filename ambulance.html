@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulance Availability</title>
+    <link rel="shortcut icon" type="jpg" href="fevicon.jpg">
+    <link rel="stylesheet" href="ambulance.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Ambulance Availability</h1>
+        </div>
+
+        <div class="summary">
+            <div class="total-ambulances">Total Ambulances: <span id="total-ambulances">0</span></div>
+            <div class="available-ambulances">Available Ambulances: <span id="available-ambulances">0</span></div>
+            <div class="reserved-ambulances">Reserved Ambulances: <span id="reserved-ambulances">0</span></div>
+        </div>
+
+        <div class="ambulances">
+            <div class="search-container">
+                <input type="text" id="search-ambulance" placeholder="Search by ambulance number or driver...">
+                <button onclick="searchAmbulances()">Search</button>
+            </div>
+            <div class="ambulance-grid" id="ambulance-grid"></div>
+        </div>
+    </div>
+
+    <script src="ambulance.js"></script>
+
+</body>
+
+</html>
