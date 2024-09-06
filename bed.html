@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Bed Management</title>
+    <link rel="stylesheet" href="bed.css">
+    
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Hospital Bed Management</h1>
+        </div>
+
+        <div class="summary">
+            <div class="total-beds">Total Beds: <span id="total-beds">0</span></div>
+            <div class="available-beds">Available Beds: <span id="available-beds">0</span></div>
+            <div class="reserved-beds">Reserved Beds: <span id="reserved-beds">0</span></div>
+        </div>
+
+        <div class="wards">
+            <!-- General Ward -->
+            <div class="ward">
+                <h2>General Ward</h2>
+                <div class="search-container">
+                    <input type="text" id="search-general" placeholder="Search bed by number or status...">
+                    <button onclick="searchBeds('general-ward', 'search-general')">Search</button>
+                </div>
+                <div class="bed-grid" id="general-ward"></div>
+            </div>
+
+            <!-- ICU Ward -->
+            <div class="ward">
+                <h2>ICU Ward</h2>
+                <div class="search-container">
+                    <input type="text" id="search-icu" placeholder="Search bed by number or status...">
+                    <button onclick="searchBeds('icu-ward', 'search-icu')">Search</button>
+                </div>
+                <div class="bed-grid" id="icu-ward"></div>
+            </div>
+
+            <!-- Private Ward -->
+            <div class="ward">
+                <h2>Private Ward</h2>
+                <div class="search-container">
+                    <input type="text" id="search-private" placeholder="Search bed by number or status...">
+                    <button onclick="searchBeds('private-ward', 'search-private')">Search</button>
+                </div>
+                <div class="bed-grid" id="private-ward"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bed.js">
+        
+    </script>
+
+</body>
+
+</html>

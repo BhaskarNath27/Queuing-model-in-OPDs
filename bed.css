@@ -1,0 +1,141 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eef1f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 48px;
+    color: #333;
+    font-weight: bold;
+}
+
+.wards {
+    margin-bottom: 20px;
+}
+
+.ward {
+    margin-bottom: 40px;
+}
+
+.ward h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #444;
+    text-transform: uppercase;
+}
+
+.bed-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.bed {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.bed:hover {
+    transform: scale(1.1);
+}
+
+.bed.available {
+    background-color: #28a745;
+}
+
+.bed.reserved {
+    background-color: #dc3545;
+}
+
+.bed-number {
+    font-weight: bold;
+}
+
+.summary {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary div {
+    padding: 15px 20px;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.summary .total-beds {
+    background-color: #17a2b8;
+}
+
+.summary .available-beds {
+    background-color: #28a745;
+}
+
+.summary .reserved-beds {
+    background-color: #dc3545;
+}
+
+.search-container {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 80%;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
