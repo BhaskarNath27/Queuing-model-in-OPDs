@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="add_patient.css">
+    <title>Add Patient</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="post">
+            <div class="patient-form">
+                <div class="row">
+                    <div class="form-field col-md-6">
+                        <input type="text" id="name" class="input-text" name="name" placeholder="Name">
+                    </div>
+
+                    <div class="form-field col-md-6">
+                        <input type="text" id="phone_num" class="input-text" name="phone_num" placeholder="Phone no.">
+                    </div>
+
+                    <div class="form-field col-md-6">
+                        <input type="text" id="patient_relative_name" class="input-text" name="patient_relative_name" placeholder="Relative's name">
+                    </div>
+
+                    <div class="form-field col-md-6">
+                        <input type="text" id="patient_relative_contact" class="input-text" name="patient_relative_contact" placeholder="Relative's contact">
+                    </div>
+
+                    <div class="form-field col-md-12">
+                        <input type="text" id="address" class="input-text" name="address" placeholder="Address">
+                    </div>
+
+                    <div class="form-field col-md-6" style="padding-bottom: 4px;">
+                        <input type="text" id="prior_ailments" class="form-control input-text mb-0 p-0" style="outline:none" name="prior_ailments" placeholder="Prior ailments if any, e.g., Diabetes, Thyroid">
+                    </div>
+
+                    <div class="form-field col-md-4 offset-md-2 mb-4 mx-auto">
+                        <select name="bed_num" class="btn btn-bed" id="bed_num">
+                            <!-- Placeholder options -->
+                            <option value="1">Bed 1</option>
+                            <option value="2">Bed 2</option>
+                            <option value="3">Bed 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-field col-md-6">
+                        <input type="date" id="dob" class="input-text" name="dob">
+                    </div>
+
+                    <div class="form-field col-md-6">
+                        <select class="input-text" name="status" id="status">
+                            <option value="Critical">Critical</option>
+                            <option value="Recovering">Recovering</option>
+                            <option value="Recovered">Recovered</option>
+                            <option value="Deceased">Deceased</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field col-md-6">
+                        <select class="input-text" name="doctor" id="doctor">
+                            <!-- Placeholder options -->
+                            <option value="Dr. Smith">Dr. Smith</option>
+                            <option value="Dr. Johnson">Dr. Johnson</option>
+                            <option value="Dr. Williams">Dr. Williams</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="patient-form row d-flex">
+                    <div class="symptoms row">
+                        <div class="symptoms-label">Symptoms</div><br>
+                        
+                        <div class="common-symptoms col-md-4">
+                            <label class="symptom-type">Common</label><br>
+                            <div class="symptom">
+                                <input type="checkbox" name="symptoms" id="fever" value="Fever" class="checkbox">
+                                <label for="fever">Fever</label><br>
+                            </div>
+                            <div class="symptom">
+                                <input type="checkbox" name="symptoms" id="dry_cough" value="Dry Cough">
+                                <label for="dry_cough">Dry cough</label><br>
+                            </div>
+                            <div class="symptom">
+                                <input type="checkbox" name="symptoms" id="tiredness" value="Tiredness">
+                                <label for="tiredness">Tiredness</label><br>
+                            </div>
+                        </div>
+                    
+                        <div class="less-common-symptoms col-md-4">
+                            <label class="symptom-type">Less Common</label><br>
+                            <div class="symptom">
+                                <input type="checkbox" name="symptoms" id="aches_and_pain" value="Aches and pains">
+                                <label for="aches_and_pain">Aches and pains</label><br>
+                            </div>
+                            <div class="symptom">
+                                <input type="checkbox" name="symptoms" id="sore_throat" value="Sore Throat">
+                                <label for="sore_throat">Sore throat</label><br>
+                            </div>
+                            <div class="symptom">
+                                <input type="checkbox" name="symptoms" id="diarrhoea" value="Diarrhoea">
+                                <label for="diarrhoea">Diarrhoea</label><br>
+                            </div>
+                            <div class="symptom">
+                                <input type="checkbox" name="symptoms" id="loss_of_taste_or_smell" value="Loss of taste or smell">
+                                <label for="loss_of_taste_or_smell">Loss of taste or smell</label><br>
+                            </div>
+                        </div>
+                        
+                        <div class="serious-symptoms col-md-4">
+                            <label class="symptom-type">Serious</label><br>
+                            <div class="symptom">
+                                <input type="checkbox" name="symptoms" id="difficulty_in_breathing_or_shortness_of_breath" value="Difficulty in breathing or shortness of breath">
+                                <label for="difficulty_in_breathing_or_shortness_of_breath">Difficulty in breathing or shortness of breath</label><br>
+                            </div>
+                            <div class="symptom">
+                                <input type="checkbox" name="symptoms" id="chest_pain_or_pressure" value="Chest pain or pressure">
+                                <label for="chest_pain_or_pressure">Chest pain or pressure</label><br>
+                            </div>
+                            <div class="symptom">
+                                <input type="checkbox" name="symptoms" id="loss_of_speech_or_movement" value="Loss Of Speech Or Movement">
+                                <label for="loss_of_speech_or_movement">Loss of speech or movement</label><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="btn1" type="submit">Add Patient</button>
+        </form>
+    </div>
+
+    <div id="patient-info">
+        <h2>Patient Information</h2>
+        <table id="patient-table" border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Relative's Name</th>
+                    <th>Relative's Contact</th>
+                    <th>Address</th>
+                    <th>Prior Ailments</th>
+                    <th>Bed Number</th>
+                    <th>Date of Birth</th>
+                    <th>Status</th>
+                    <th>Doctor</th>
+                    <th>Symptoms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script type="module" src="add_patient.js"></script>
+</body>
+</html>
