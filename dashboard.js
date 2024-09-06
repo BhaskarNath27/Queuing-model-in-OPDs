@@ -27,7 +27,7 @@ function redirectToSection(section) {
         "add-patient": "add_patient.html",
         "bed-availability": "bed.html",
         "inventory": "inventory.html",
-        "refer-patient": "patient_refer(1).html",
+        "refer-patient": "patient_refer.html",
         "staff-training": "training.html",
         "schedule": "schedulenew.html",
         "blood-bank": "blood.html"
