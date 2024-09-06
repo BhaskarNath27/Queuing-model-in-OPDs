@@ -1,112 +1,108 @@
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #6d777a, #2575fc);
-    background-image: url("Inventory_Best.jpg");
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
+* {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-}
-.h1{
-    color:#020114;
-}
-header {
-    background-color: white(0, 0, 0, 0.5);
-    opacity:0.5;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-}
-
-main {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-.inventory-form, .search-form {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.inventory-form input, .search-form input {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-    width: 200px;
-}
-
-.inventory-form button, .search-form button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.inventory-form button:hover, .search-form button:hover {
-    background-color: #45a049;
-}
-
-#inventory-list {
-    color: black;
-    list-style-type: none;
     padding: 0;
-    width: 80%;
-    max-width: 800px;
+    box-sizing: border-box;
 }
 
-.inventory-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+header {
+    background-color: #0062cc;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #0062cc;
+    text-align: center;
+}
+
+.inventory-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.inventory-list th, .inventory-list td {
+    border: 1px solid #ddd;
+    padding: 14px;
+    text-align: left;
+}
+
+.inventory-list th {
+    background-color: #0062cc;
+    color: #fff;
+    font-weight: bold;
+}
+
+.inventory-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.inventory-list td {
+    font-size: 16px;
+    color: #555;
+}
+
+.add-item-form, .search-form {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.add-item-form input, .add-item-form button, .search-form input, .search-form button {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
     margin-bottom: 10px;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-.inventory-item button {
-    padding: 5px 10px;
-    background-color: #f44336;
-    color: white;
+.add-item-form button, .search-form button {
+    background-color: #0062cc;
+    color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.inventory-item button:hover {
-    background-color: #e53935;
+.add-item-form button:hover, .search-form button:hover {
+    background-color: #0051a8;
 }
 
-.inventory-item .quantity-controls {
-    display: flex;
-    align-items: center;
+.add-item-form input:hover, .search-form input:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.quantity-controls button {
-    padding: 5px;
-    background-color: #2196F3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0 5px;
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #0062cc;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.quantity-controls button:hover {
-    background-color: #1e88e5;
-}
-

@@ -8,7 +8,7 @@ body {
 }
 .sidebar {
     width: 250px;
-    background-color: #2c3e50;
+    background-color: #015d8f;
     color: #ecf0f1;
     position: fixed;
     height: 100%;
@@ -22,7 +22,7 @@ body {
     margin-bottom: 20px;
     font-size: 1.5em;
 }
-.nav-button {
+/* .nav-button {
     background: none;
     border: none;
     color: #ecf0f1;
@@ -36,7 +36,31 @@ body {
 }
 .nav-button:hover {
     background-color: #34495e;
+} */
+
+.nav-button {
+    background-color: #ffffff;
+    border: none;
+    color: #114e86;
+    padding: 15px;
+    margin: 12px ;
+    margin-bottom: 2px;
+    cursor: pointer;
+    width: 90%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.nav-button:hover {
+    background-color: #609ba7;
+    color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
 .main-content {
     margin-left: 250px;
     padding: 20px;
@@ -73,7 +97,7 @@ body {
     padding: 10px 20px;
     font-size: 1em;
     color: #ecf0f1;
-    background-color: #2c3e50;
+    background-color: #457886;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
@@ -94,7 +118,7 @@ body {
 
 /* Styles for the footer section */
 .footer {
-    background-color: #2c3e50;
+    background-color: #3576b8;
     color: #ecf0f1;
     padding: 15px;
     text-align: center;
@@ -121,7 +145,7 @@ body {
 .welcome-section {
     text-align: center; /* Center-aligns the text */
     padding: 20px;
-    background-color: #2c3e50;
+    background-color: #015d8f;
     color: #ecf0f1;
     border-radius: 10px;
     margin-bottom: 20px;

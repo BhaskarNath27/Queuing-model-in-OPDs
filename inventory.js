@@ -1,78 +1,52 @@
-let inventory = [];
+const inventory = [
+    // { name: 'Syringes', quantity: 500, category: 'Medical Supplies', status: 'Available' },
+    // { name: 'Stethoscope', quantity: 50, category: 'Equipment', status: 'Available' },
+    // { name: 'Paracetamol', quantity: 200, category: 'Medicines', status: 'Low Stock' }
+];
+
+function renderInventory(items = inventory) {
+    const inventoryListBody = document.getElementById('inventory-list-body');
+    inventoryListBody.innerHTML = '';
+    items.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.quantity}</td>
+            <td>${item.category}</td>
+            <td>${item.status}</td>
+        `;
+        inventoryListBody.appendChild(row);
+    });
+}
 
 function addItem() {
     const itemName = document.getElementById('item-name').value;
     const itemQuantity = parseInt(document.getElementById('item-quantity').value);
+    const itemCategory = document.getElementById('item-category').value;
 
-    if (itemName && itemQuantity > 0) {
-        inventory.push({ name: itemName, quantity: itemQuantity });
+    if (itemName && itemQuantity && itemCategory) {
+        const status = itemQuantity < 100 ? 'Low Stock' : 'Available';
+        inventory.push({ name: itemName, quantity: itemQuantity, category: itemCategory, status });
         renderInventory();
+        clearFormFields();
     }
 }
 
-function renderInventory() {
-    const inventoryList = document.getElementById('inventory-list');
-    inventoryList.innerHTML = '';
+function clearFormFields() {
+    document.getElementById('item-name').value = '';
+    document.getElementById('item-quantity').value = '';
+    document.getElementById('item-category').value = '';
+}
 
-    inventory.forEach((item, index) => {
-        const listItem = document.createElement('li');
-        listItem.className = 'inventory-item';
-        listItem.innerHTML = `
-            <span>${item.name}</span>
-            <div class="quantity-controls">
-                <button onclick="decreaseQuantity(${index})">-</button>
-                <span>${item.quantity}</span>
-                <button onclick="increaseQuantity(${index})">+</button>
-            </div>
-            <button onclick="deleteItem(${index})">Delete</button>
-        `;
-        inventoryList.appendChild(listItem);
+function searchItems() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const filteredItems = inventory.filter(item => {
+        return item.name.toLowerCase().includes(query) ||
+            item.category.toLowerCase().includes(query) ||
+            item.status.toLowerCase().includes(query);
     });
+    renderInventory(filteredItems);
 }
 
-function increaseQuantity(index) {
-    inventory[index].quantity++;
-    renderInventory();
-}
-
-function decreaseQuantity(index) {
-    if (inventory[index].quantity > 1) {
-        inventory[index].quantity--;
-        renderInventory();
-    }
-}
-
-function deleteItem(index) {
-    inventory.splice(index, 1);
-    renderInventory();
-}
-
-function searchItem() {
-    const searchItem = document.getElementById('search-item').value.toLowerCase();
-    const inventoryList = document.getElementById('inventory-list');
-    inventoryList.innerHTML = '';
-
-    inventory.forEach((item, index) => {
-        if (item.name.toLowerCase().includes(searchItem)) {
-            const listItem = document.createElement('li');
-            listItem.className = 'inventory-item';
-            listItem.innerHTML = `
-                <span>${item.name}</span>
-                <div class="quantity-controls">
-                    <button onclick="decreaseQuantity(${index})">-</button>
-                    <span>${item.quantity}</span>
-                    <button onclick="increaseQuantity(${index})">+</button>
-                </div>
-                <button onclick="deleteItem(${index})">Delete</button>
-            `;
-            inventoryList.appendChild(listItem);
-        }
-    });
-}
-
-
-// Summary
-// Adding Items: Users can add items to the inventory with a specified quantity.
-// Managing Quantities: Users can increase or decrease the quantity of items directly from the list.
-// Deleting Items: Users can remove items from the inventory.
-// Searching: Users can search for specific items by name, and only matching items will be displayed.
+// Initial rendering of inventory
+renderInventory();

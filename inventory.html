@@ -1,27 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Inventory</title>
+    <title>Hospital Inventory Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="inventory.css">
 </head>
+
 <body>
+
     <header>
-        <h1>Hospital Inventory</h1>
+        Hospital Inventory Management
     </header>
-    <main>
-        <div class="inventory-form">
-            <input type="text" id="item-name" placeholder="Item Name">
-            <input type="number" id="item-quantity" placeholder="Quantity">
+
+    <div class="container">
+        <h2>Current Inventory</h2>
+
+        <!-- Search Form -->
+        <div class="search-form">
+            <input type="text" id="search-input" placeholder="Item Name / Category" />
+            <button onclick="searchItems()">Search</button>
+        </div>
+
+        <table class="inventory-list">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="inventory-list-body">
+                <!-- Items will be added here dynamically -->
+            </tbody>
+        </table>
+
+        <div class="add-item-form">
+            <h2>Add New Item</h2>
+            <input type="text" id="item-name" placeholder="Item Name" />
+            <input type="number" id="item-quantity" placeholder="Quantity" />
+            <input type="text" id="item-category" placeholder="Category" />
             <button onclick="addItem()">Add Item</button>
         </div>
-        <div class="search-form">
-            <input type="text" id="search-item" placeholder="Search Item" oninput="searchItem()">
-            <button onclick="addItem()">Search</button>
-        </div>
-        <ul id="inventory-list"></ul>
-    </main>
-    <script src="inventory.js"></script>
+    </div>
+
+    <!-- Footer -->
+    <!-- <footer class="footer">
+        © 2024 Hospital Inventory System
+    </footer> -->
+
+    
+
 </body>
+
 </html>
