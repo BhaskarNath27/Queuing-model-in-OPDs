@@ -1,133 +1,72 @@
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
 }
-
 body {
     margin: 0;
     padding: 20px;
     background-color: #f0f0f0;
 }
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-
 h1, h2 {
-    color: #007BFF;
-    margin-bottom: 20px;
+    color: #2196F3;
 }
-
 .tabs {
     display: flex;
-    justify-content: space-around;
     margin-bottom: 20px;
 }
-
 .tab {
     padding: 10px 20px;
     background-color: #444747;
     border: none;
     cursor: pointer;
-    color: white;
     transition: background-color 0.3s;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    width: 350px;
 }
-
-.tab i {
-    margin-right: 10px;
-}
-
 .tab.active {
-    background-color: #007BFF;
+    background-color: #2196F3;
+    color: white;
 }
-
-.tab:hover {
-    background-color: #5a5a5a;
-}
-
 .tab-content {
     display: none;
 }
-
 .tab-content.active {
     display: block;
 }
-
 form {
     display: grid;
     gap: 10px;
     max-width: 400px;
-    margin-bottom: 30px;
 }
-
 input, select, button, textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.2s;
+    padding: 8px;
 }
-
-input:focus, select:focus, textarea:focus {
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-    outline: none;
-}
-
 button {
-    background-color: #28a745;
+    background-color: #2196F3;
     color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    padding: 12px;
 }
-
 button:hover {
-    background-color: #218838;
+    background-color: #1976D2;
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
-
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
 }
-
 th {
-    background-color: #007BFF;
-    color: white;
-}
-
-tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
-}
-
-@media (max-width: 768px) {
-    .tabs {
-        flex-direction: column;
-    }
-
-    .tab {
-        width: 100%;
-        justify-content: center;
-    }
-
-    form {
-        max-width: 100%;
-    }
+    background-color: #f2f2f2;
 }

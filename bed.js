@@ -40,9 +40,21 @@ const privateWardBeds = [
     { number: 'P3', status: 'available' },
     { number: 'P4', status: 'reserved' },
     { number: 'P5', status: 'available' },
-    { number: 'P6', status: 'reserved' }
+    { number: 'P6', status: 'reserved' },
+    { number: 'P7', status: 'available' },
+    { number: 'P8', status: 'reserved' },
+    { number: 'P9', status: 'available' },
+    { number: 'P10', status: 'reserved' }
 ];
 
+// Function to toggle bed status between 'available' and 'reserved'
+function toggleBedStatus(bed, containerId) {
+    bed.status = bed.status === 'available' ? 'reserved' : 'available';
+    createBedElements(getBedsByWard(containerId), containerId);
+    updateBedCounts();
+}
+
+// Function to create bed elements with buttons to free or occupy
 function createBedElements(beds, containerId) {
     const container = document.getElementById(containerId);
     container.innerHTML = ''; // Clear previous beds
@@ -50,25 +62,30 @@ function createBedElements(beds, containerId) {
         const bedElement = document.createElement('div');
         bedElement.classList.add('bed');
         bedElement.classList.add(bed.status === 'available' ? 'available' : 'reserved');
-        bedElement.innerHTML = `<div class="bed-number">${bed.number}</div>`;
+        bedElement.innerHTML = `
+            <div class="bed-number">${bed.number}</div>
+            <button onclick="toggleBedStatus(${JSON.stringify(bed)}, '${containerId}')">
+                ${bed.status === 'available' ? 'Occupy' : 'Free'}
+            </button>
+        `;
         container.appendChild(bedElement);
     });
 }
 
+// Function to search for beds by number or status
 function searchBeds(containerId, searchInputId) {
     const query = document.getElementById(searchInputId).value.toLowerCase();
-    let beds;
-    if (containerId === 'general-ward') beds = generalWardBeds;
-    else if (containerId === 'icu-ward') beds = icuWardBeds;
-    else if (containerId === 'private-ward') beds = privateWardBeds;
+    const beds = getBedsByWard(containerId);
 
     const filteredBeds = beds.filter(bed => bed.number.toLowerCase().includes(query) || bed.status.toLowerCase().includes(query));
     createBedElements(filteredBeds, containerId);
 }
 
+// Function to update total, available, and reserved bed counts
 function updateBedCounts() {
-    const totalBeds = [...generalWardBeds, ...icuWardBeds, ...privateWardBeds].length;
-    const availableBeds = [...generalWardBeds, ...icuWardBeds, ...privateWardBeds].filter(bed => bed.status === 'available').length;
+    const allBeds = [...generalWardBeds, ...icuWardBeds, ...privateWardBeds];
+    const totalBeds = allBeds.length;
+    const availableBeds = allBeds.filter(bed => bed.status === 'available').length;
     const reservedBeds = totalBeds - availableBeds;
 
     document.getElementById('total-beds').textContent = totalBeds;
@@ -76,8 +93,16 @@ function updateBedCounts() {
     document.getElementById('reserved-beds').textContent = reservedBeds;
 }
 
+// Function to get beds based on ward type
+function getBedsByWard(ward) {
+    if (ward === 'general-ward') return generalWardBeds;
+    if (ward === 'icu-ward') return icuWardBeds;
+    if (ward === 'private-ward') return privateWardBeds;
+    return [];
+}
+
 // Initialize bed grids and counts
 createBedElements(generalWardBeds, 'general-ward');
 createBedElements(icuWardBeds, 'icu-ward');
 createBedElements(privateWardBeds, 'private-ward');
-updateBedCounts(); // Update counts when the page loads
+updateBedCounts();

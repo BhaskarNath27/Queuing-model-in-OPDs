@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Referral System</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="patient_refer.css">
-    <link rel="shortcut icon" type="jpg" href="fevicon.png">
 </head>
 <body>
     <div class="container">
         <h1>Patient Referral System</h1>
         
         <div class="tabs">
-            <button class="tab active" data-tab="referral"><i class="fas fa-notes-medical"></i> New Referral</button>
-            <button class="tab" data-tab="hospitals"><i class="fas fa-hospital"></i> Hospitals</button>
-            <button class="tab" data-tab="doctors"><i class="fas fa-user-md"></i> Doctors</button>
+            <button class="tab active" data-tab="referral">New Referral</button>
+            <button class="tab" data-tab="hospitals">Hospitals</button>
+            <button class="tab" data-tab="doctors">Doctors</button>
         </div>
         
         <div id="referralTab" class="tab-content active">
@@ -27,13 +24,15 @@
                 <textarea id="medicalHistory" placeholder="Brief Medical History" required></textarea>
                 <select id="referringHospital" required>
                     <option value="">Select Referring Hospital</option>
+                    <!-- Options will be populated dynamically -->
                 </select>
                 <select id="referringDoctor" required>
                     <option value="">Select Referring Doctor</option>
+                    <!-- Options will be populated dynamically -->
                 </select>
                 <input type="date" id="referralDate" required>
                 <textarea id="referralReason" placeholder="Reason for Referral" required></textarea>
-                <button type="submit"><i class="fas fa-paper-plane"></i> Submit Referral</button>
+                <button type="submit">Submit Referral</button>
             </form>
         </div>
         
@@ -43,7 +42,7 @@
                 <input type="text" id="hospitalName" placeholder="Hospital Name" required>
                 <input type="text" id="hospitalAddress" placeholder="Address" required>
                 <input type="tel" id="hospitalPhone" placeholder="Phone Number" required>
-                <button type="submit"><i class="fas fa-plus"></i> Add Hospital</button>
+                <button type="submit">Add Hospital</button>
             </form>
             <table id="hospitalTable">
                 <thead>
@@ -66,8 +65,9 @@
                 <input type="text" id="specialty" placeholder="Specialty" required>
                 <select id="doctorHospital" required>
                     <option value="">Select Hospital</option>
+                    <!-- Options will be populated dynamically -->
                 </select>
-                <button type="submit"><i class="fas fa-plus"></i> Add Doctor</button>
+                <button type="submit">Add Doctor</button>
             </form>
             <table id="doctorTable">
                 <thead>
