@@ -141,7 +141,7 @@ function updateDoctorSelects() {
             const doctor = data[key];
             const option = document.createElement('option');
             option.value = doctor.name;
-            option.textContent = ${doctor.name} (${doctor.specialty});
+            option.textContent = `${doctor.name} (${doctor.specialty})`;
             doctorSelect.appendChild(option);
         }
     });
