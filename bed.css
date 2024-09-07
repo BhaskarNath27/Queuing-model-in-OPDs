@@ -64,6 +64,11 @@ body {
     position: relative; /* To position the button within the bed element */
 }
 
+.bed-number {
+    font-weight: bold;
+    margin-top: 20px; /* Adjust this value to move the number lower */
+}
+
 .bed:hover {
     transform: scale(1.1);
 }
