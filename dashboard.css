@@ -168,3 +168,15 @@ body {
     margin: 20px auto;
     display: block; /* Ensures the image is centered */
 }
+
+.favicon {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Add extra margin below the Ambulance button */
+.nav-button:last-of-type {
+    margin-bottom: 40px; /* Increase this value for more space */
+}
