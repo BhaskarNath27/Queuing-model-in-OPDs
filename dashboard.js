@@ -30,8 +30,7 @@ function redirectToSection(section) {
         "refer-patient": "patient_refer.html",
         "staff-training": "training.html",
         "schedule": "schedulenew.html",
-        "blood-bank": "blood.html",
-        "ambulance" :"ambulance.html"
+        "blood-bank": "blood.html"
     };
 
     const pageUrl = sectionPages[section];

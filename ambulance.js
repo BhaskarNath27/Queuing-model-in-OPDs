@@ -4,7 +4,12 @@ for (let i = 1; i <= 30; i++) {
     ambulances.push({
         number: `AMB${String(i).padStart(3, '0')}`,
         status: i % 3 === 0 ? 'reserved' : 'available',  // Randomly set status
+<<<<<<< HEAD
         phone: `+91 98765432${i % 10}${i}`
+=======
+        phone: `+91 98765432${i % 10}${i}`,  // Correct phone number format
+        driver: `Driver ${i}`  // Added driver property for search
+>>>>>>> 6659d3ce8aeecf9ec0ef4c0e61fb0ec6d753a09b
     });
 }
 
@@ -72,7 +77,11 @@ function searchAmbulances() {
             <div class="driver-name">Driver: ${ambulance.driver}</div>
             <div class="availability-status">${ambulance.status === 'available' ? 'Available' : 'Reserved'}</div>
             <div class="phone-icon">
+<<<<<<< HEAD
                 <img src="phone-icon.png" alt="Phone Icon" width="20px" height="20px"> 
+=======
+                <img src="phone_icon.jpg" alt="Phone Icon" width="20px" height="20px"> 
+>>>>>>> 6659d3ce8aeecf9ec0ef4c0e61fb0ec6d753a09b
                 <span>${ambulance.phone}</span>
             </div>
         `;
