@@ -36,7 +36,7 @@ function redirectToSection(section) {
 
     const pageUrl = sectionPages[section];
     if (pageUrl) {
-        window.open(pageUrl);
+        window.location.href = pageUrl;
     } else {
         console.error(`No page found for section: ${section}`);
     }
